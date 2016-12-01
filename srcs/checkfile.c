@@ -6,7 +6,7 @@
 /*   By: fdeclerc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/30 11:51:24 by fdeclerc          #+#    #+#             */
-/*   Updated: 2016/12/01 19:13:07 by fdeclerc         ###   ########.fr       */
+/*   Updated: 2016/12/01 21:13:08 by rmusella         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static int		is_char(int c, int i)
 {
-	if (c == CEMPTY || c == CBLOCK
+	if (c == CHAR_EMPTY || c == CHAR_BLOCK
 			|| ((c == '\n') && ((i % 5 == 4) || (i == 20))))
 		return (1);
 	return (0);
@@ -29,13 +29,13 @@ static int		check_tetri(char *buffer, int i)
 	j = 0;
 	if (buffer[i] == CBLOCK)
 	{
-		if (i > 0 && buffer[i - 1] == CBLOCK)
+		if (i > 0 && buffer[i - 1] == CHAR_BLOCK)
 			j++;
-		if (i < 19 && buffer[i + 1] == CBLOCK)
+		if (i < 19 && buffer[i + 1] == CHAR_BLOCK)
 			j++;
-		if (i >= 5 && buffer[i - 5] == CBLOCK)
+		if (i >= 5 && buffer[i - 5] == CHAR_BLOCK)
 			j++;
-		if (i <= 14 && buffer[i + 5] == CBLOCK)
+		if (i <= 14 && buffer[i + 5] == CHAR_BLOCK)
 			j++;
 	}
 	return (j + check_tetri(buffer, ++i));
@@ -52,7 +52,7 @@ static int		check_block(char *buffer)
 	nb_diese = 0;
 	while (buffer[i] && is_char(buffer[i], i) && nb_diese <= 4)
 	{
-		if (buffer[i] == CBLOCK)
+		if (buffer[i] == CHAR_BLOCK)
 		{
 			nb_diese++;
 			if (nb_diese == 1)
@@ -65,32 +65,28 @@ static int		check_block(char *buffer)
 			&& (back == 6 || back == 8))
 		return (1);
 	else
-		error(2);
+		ft_error_msg_exit("");
 	return (0);
 }
 
-int			parse_file(t_map *map char *map)
+int			parse_file(int fd, t_map *map)
 {
 	int		fd;
 	int		back;
 	int		lastback;
-	char	buffer[22];
+	char	buffer[21];
 
-	back = 0;
-	lastback = 0;
-	if ((fd = open(file, O_RDONLY)) < 0)
-		error(2);
 	while ((back = read(fd, buffer, 21)) > 0)
 	{
 		lastback = back;
 		buffer[back] = '\0';
-		if (back >= 20 && check_block(buffer))
+		if (back == 21 && check_block(buffer))
 			block(map, buffer);
 		else
-			error(2);
+			ft_error_msg_exit("error: an invalid block separator was found");
 	}
 	if (back <= 0 && (lastback == 21 || !lastback))
-		error(2);
+			ft_error_msg_exit("error: an invalid block separator was found");
 	return(1);
 }
 
