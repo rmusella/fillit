@@ -6,13 +6,13 @@
 /*   By: rmusella <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/27 17:49:55 by rmusella          #+#    #+#             */
-/*   Updated: 2016/12/01 19:12:24 by rmusella         ###   ########.fr       */
+/*   Updated: 2016/12/01 19:14:40 by fdeclerc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 #include <fcntl.h>
-#include "libft.h"
+#include "../includes/libft.h"
 #include <stdlib.h>
 
 int		main(int argc, char **argv)
