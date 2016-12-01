@@ -6,11 +6,11 @@
 /*   By: rmusella <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/01 18:17:41 by rmusella          #+#    #+#             */
-/*   Updated: 2016/12/01 18:19:09 by rmusella         ###   ########.fr       */
+/*   Updated: 2016/12/01 18:57:30 by fdeclerc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../includes/libft.h"
 #include <stdlib.h>
 
 void	ft_error_msg_exit(char *str)
