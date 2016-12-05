@@ -6,7 +6,7 @@
 /*   By: fdeclerc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/05 11:27:17 by fdeclerc          #+#    #+#             */
-/*   Updated: 2016/12/05 14:12:33 by fdeclerc         ###   ########.fr       */
+/*   Updated: 2016/12/05 14:24:31 by fdeclerc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ static int		square(int nb)
 	return (min);
 }
 
-int				init_fillit(t_space *space, chr *file)
+int				init_fillit(t_space *space, char *file)
 {
 	space->pieces = NULL;
 	space->nb_pieces = 0;
@@ -50,3 +50,28 @@ static int		is_map(t_space *space, int size)
 		ft_memset(space->map[i++], CEMPTY, size);}
 		return (1);
 }
+
+char		*pieces_buf(char const *str, unsigned int start, size_t length,
+		char j)
+{
+	char	*pieces;
+	unsigned int i;
+
+	if (!str)
+		return (NULL);
+	pieces = ft_strnew(length);
+	if (!pieces)
+		return (NULL);
+	i = 0;
+	while (i < length)
+	{
+		if (s[start + i] == CBLOCK)
+			pieces[i] = j;
+		else
+			pieces[i] = s[start + i];
+		i++;
+	}
+	return (pieces);
+}
+
+
