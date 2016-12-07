@@ -6,11 +6,9 @@
 /*   By: rmusella <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/05 18:12:55 by rmusella          #+#    #+#             */
-/*   Updated: 2016/12/07 15:23:11 by fdeclerc         ###   ########.fr       */
+/*   Updated: 2016/12/05 18:17:00 by rmusella         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "../includes/fillit.h"
 
 static int		shift_top_left(int value)
 {

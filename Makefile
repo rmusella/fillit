@@ -6,7 +6,7 @@
 #    By: fdeclerc <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/12/07 12:03:18 by fdeclerc          #+#    #+#              #
-#    Updated: 2016/12/07 12:23:26 by fdeclerc         ###   ########.fr        #
+#    Updated: 2016/12/07 22:48:35 by rmusella         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,11 +16,17 @@ CC = gcc
 
 CFLAGS = -Wall -Wextra -Werror
 
-SRCS = srcs/checkfile.c \
+SRCS = srcs/binary_conversion.c \
+	   srcs/build_tetrimino.c \
+	   srcs/checkfile.c \
+	   srcs/check_pattern.c \
+	   srcs/error.c \
 	   srcs/fillit.c \
-	   # Les autres sources a rajouter, je ne connais pas encore tous les noms
+	   srcs/game_solver.c \
+	   srcs/parsing.c \
+	   srcs/print.c
 
-OBJS = $(subst .c, .o, $(subst srcs/,,$(SRCS)))
+OBJS = $(subst .c, .o, $(patsubst srcs/,,$(SRCS)))
 
 all: $(NAME)
 

@@ -6,12 +6,12 @@
 /*   By: rmusella <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/04 18:20:08 by rmusella          #+#    #+#             */
-/*   Updated: 2016/12/07 15:24:55 by fdeclerc         ###   ########.fr       */
+/*   Updated: 2016/12/05 18:20:33 by rmusella         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft/libft.h"
-#include "../includes/fillit.h"
+#include "libft.h"
+#include "fillit.h"
 
 static int		get_width(unsigned short v)
 {

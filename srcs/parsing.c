@@ -6,13 +6,13 @@
 /*   By: rmusella <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/04 18:05:05 by rmusella          #+#    #+#             */
-/*   Updated: 2016/12/07 15:28:49 by fdeclerc         ###   ########.fr       */
+/*   Updated: 2016/12/05 16:26:38 by rmusella         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
-#include "../libft/libft.h"
-#include "../includes/fillit.h"
+#include "libft.h"
+#include "fillit.h"
 
 static void		set_delimitator_for_split(char *str)
 {

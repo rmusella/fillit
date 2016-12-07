@@ -6,7 +6,7 @@
 /*   By: rmusella <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/01 17:36:59 by rmusella          #+#    #+#             */
-/*   Updated: 2016/12/07 15:22:12 by fdeclerc         ###   ########.fr       */
+/*   Updated: 2016/12/07 21:58:57 by rmusella         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ typedef struct				s_pattern
 {
 		char				raw_form[16];
 		unsigned short		value;
-		unsigned long long	label;
+		int					label;
 }							t_pattern;
 
 typedef struct		s_coord
@@ -59,9 +59,9 @@ typedef struct		s_coord
 
 typedef struct		s_tetrimino
 {
-	int				pattern_label;
+	int				pattern_index;
 	unsigned short	value;
-	t_bit_tab		byte;
+	t_bit_tab		bits;
 	t_coord			offset;
 	int				width;
 	int				height;
@@ -74,7 +74,9 @@ typedef struct		s_game
 	int				size;
 	int				total_space;
 	int				space_required;
-	t_pos			cursor[19];
+	unsigned short	m[16];
+	unsigned short	mdz[16];
+	t_coord			cursor[19];
 }					t_game;
 
 #endif
