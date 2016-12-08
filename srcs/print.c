@@ -6,7 +6,7 @@
 /*   By: rmusella <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/07 20:25:07 by rmusella          #+#    #+#             */
-/*   Updated: 2016/12/07 21:33:24 by rmusella         ###   ########.fr       */
+/*   Updated: 2016/12/08 17:26:33 by rmusella         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ static void		write_t(char *r_game, int game_size, t_tetrimino *t, int t_i)
 	}
 }
 
-void			print_result_game(t_game *game)
+void			print_solution(t_game *game)
 {
 	int				i;
 	int				ttr_i;
